@@ -5,7 +5,7 @@
 
 [![Live Demo]-- (https://akashms24.github.io/Trinity-Restaurant/)
 <p align="center">
-  <img src="assets/Screenshot%202026-04-30%20213454.png" width="900"/>
+  <img src="Screenshot%202026-04-30%20213454.png" width="900"/>
 </p>
 
 ## 🌟 Features
