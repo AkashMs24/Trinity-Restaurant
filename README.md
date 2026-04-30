@@ -4,15 +4,7 @@
 > A premium dining experience at Hesaraghatta, Bengaluru — Est. 2024
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-gold?style=for-the-badge)](https://YOUR-USERNAME.github.io/trinity-restaurant)
-[![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-181717?style=for-the-badge&logo=github)](https://pages.github.com/)
 
----
-
-## 📸 Preview
-
-![Trinity Restaurant Homepage](assets/preview.png)
-
----
 
 ## 🌟 Features
 
