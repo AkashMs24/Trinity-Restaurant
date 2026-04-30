@@ -4,6 +4,9 @@
 > A premium dining experience at Hesaraghatta, Bengaluru — Est. 2024
 
 [![Live Demo]-- (https://akashms24.github.io/Trinity-Restaurant/)
+<p align="center">
+  <img src="assets/Screenshot%202026-04-30%20213454.png" width="900"/>
+</p>
 
 ## 🌟 Features
 
