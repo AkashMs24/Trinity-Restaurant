@@ -3,7 +3,7 @@
 > *"Taste the Trinity of Flavors"*  
 > A premium dining experience at Hesaraghatta, Bengaluru — Est. 2024
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-gold?style=for-the-badge)](https://AkashMs24.github.io/Trinity-Restaurant/)
+[![Live Demo]-- (https://akashms24.github.io/Trinity-Restaurant/)
 
 ## 🌟 Features
 
