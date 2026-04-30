@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinity Restaurant – Taste the Trinity of Flavors | Hesaraghatta, Bengaluru</title>
+  <meta name="description" content="Trinity Restaurant in Hesaraghatta, Bengaluru. Premium dining experience with South Indian, North Indian, Continental, and more. Reserve your table today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Josefin+Sans:wght@100;200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">TRINITY</div>
+  <div class="loader-bar"></div>
+  <div class="loader-sub">Hesaraghatta · Bengaluru</div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- CART OVERLAY -->
+<div class="cart-sidebar-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-sidebar-header">
+    <span class="cart-sidebar-title">Your Order</span>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div id="cartSidebarContent">
+    <div class="cart-empty">
+      <span class="cart-empty-icon">🍽</span>
+      Your cart is empty.<br>Explore our menu and<br>add delicious items.
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="#" onclick="navigate('home');closeMobileNav()">Home</a>
+  <a href="#" onclick="navigate('about');closeMobileNav()">About</a>
+  <a href="#" onclick="navigate('menu');closeMobileNav()">Menu</a>
+  <a href="#" onclick="navigate('dining');closeMobileNav()">Dining</a>
+  <a href="#" onclick="navigate('order');closeMobileNav()">Order</a>
+  <a href="#" onclick="navigate('reservation');closeMobileNav()">Reserve</a>
+  <a href="#" onclick="navigate('contact');closeMobileNav()">Contact</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo" onclick="navigate('home')">
+    <span class="nav-logo-main">TRINITY</span>
+    <span class="nav-logo-sub">Restaurant · Est. 2024</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="navigate('home')">Home</a></li>
+    <li><a href="#" onclick="navigate('about')">About</a></li>
+    <li><a href="#" onclick="navigate('menu')">Menu</a></li>
+    <li><a href="#" onclick="navigate('dining')">Dining</a></li>
+    <li><a href="#" onclick="navigate('order')">Order</a></li>
+    <li><a href="#" onclick="navigate('reservation')">Reserve</a></li>
+    <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="cart-btn" onclick="openCart()">
+      🛒
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="btn-gold" onclick="navigate('reservation')">Reserve a Table</button>
+    <button class="hamburger" onclick="openMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════
+     HOME PAGE
+═══════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80')"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><span>Premium Dining Experience</span></div>
+      <h1 class="hero-title">
+        Trinity
+        <span class="hero-title-italic">Restaurant</span>
+      </h1>
+      <p class="hero-tagline">"Taste the Trinity of Flavors"</p>
+      <div class="hero-ctas">
+        <button class="btn-gold-fill" onclick="navigate('reservation')">Reserve a Table</button>
+        <button class="btn-gold" onclick="navigate('order')">Order Online</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="ticker-item">South Indian Heritage</span>
+      <span class="ticker-item">North Indian Royal</span>
+      <span class="ticker-item">Continental Fusion</span>
+      <span class="ticker-item">Chinese & Pan-Asian</span>
+      <span class="ticker-item">Street Snacks Hub</span>
+      <span class="ticker-item">Beverages & Desserts</span>
+      <span class="ticker-item">Hesaraghatta · Bengaluru</span>
+      <span class="ticker-item">South Indian Heritage</span>
+      <span class="ticker-item">North Indian Royal</span>
+      <span class="ticker-item">Continental Fusion</span>
+      <span class="ticker-item">Chinese & Pan-Asian</span>
+      <span class="ticker-item">Street Snacks Hub</span>
+      <span class="ticker-item">Beverages & Desserts</span>
+      <span class="ticker-item">Hesaraghatta · Bengaluru</span>
+    </div>
+  </div>
+
+  <!-- FEATURED DISHES -->
+  <section class="featured-section">
+    <div class="featured-header">
+      <div>
+        <span class="section-label">Signature Creations</span>
+        <h2 class="section-title">Chef's <em>Finest</em> Picks</h2>
+        <div class="divider"></div>
+      </div>
+      <button class="btn-gold" onclick="navigate('menu')">Explore Full Menu →</button>
+    </div>
+    <div class="dishes-grid" id="featuredDishes"></div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="about-preview">
+    <div class="about-images">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80" alt="Trinity Interior" class="about-img-main" />
+      <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=700&q=80" alt="Trinity Dining" class="about-img-accent" />
+      <div class="about-img-badge">
+        <span class="about-img-badge-num">2024</span>
+        <span class="about-img-badge-txt">Established</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">Where Every Meal Tells a <em>Story</em></h2>
+      <div class="divider"></div>
+      <p class="about-body">Born from a shared passion for culinary excellence, Trinity Restaurant was founded to create a space where every guest feels the warmth of home and the magic of world-class cuisine. Nestled in the serene landscape of Hesaraghatta, we bring together three pillars — taste, tradition, and togetherness.</p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">120+</div>
+          <div class="stat-label">Menu Items</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Dining Halls</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Founders</div>
+        </div>
+      </div>
+      <button class="btn-gold" onclick="navigate('about')">Discover Our Story →</button>
+    </div>
+  </section>
+
+  <!-- DINING HALLS PREVIEW -->
+  <section class="dining-section">
+    <div style="text-align:center; margin-bottom:0">
+      <span class="section-label">Four Extraordinary Spaces</span>
+      <h2 class="section-title">Choose Your <em>Experience</em></h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="dining-grid">
+      <div class="dining-card" onclick="navigate('dining')">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=900&q=80" alt="The Skyrane Hall" />
+        <div class="dining-card-overlay">
+          <span class="dining-card-tag">Luxury · Fine Dining</span>
+          <div class="dining-card-name">The Skyrane Hall</div>
+          <p class="dining-card-desc">An opulent dinner hall adorned with crystal chandeliers and hand-carved wood panels.</p>
+          <span class="dining-card-link">Book Now →</span>
+        </div>
+      </div>
+      <div class="dining-card" onclick="navigate('dining')">
+        <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?w=900&q=80" alt="Desire Courtyard" />
+        <div class="dining-card-overlay">
+          <span class="dining-card-tag">Family · Open Air</span>
+          <div class="dining-card-name">Desire Courtyard</div>
+          <p class="dining-card-desc">A lush, open-air courtyard bathed in natural light — perfect for family gatherings.</p>
+          <span class="dining-card-link">Book Now →</span>
+        </div>
+      </div>
+      <div class="dining-card" onclick="navigate('dining')">
+        <img src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=900&q=80" alt="Snack Arena" />
+        <div class="dining-card-overlay">
+          <span class="dining-card-tag">Casual · Quick Bites</span>
+          <div class="dining-card-name">Snack Arena</div>
+          <p class="dining-card-desc">Vibrant, energetic space for street-inspired bites and fast favorites done right.</p>
+          <span class="dining-card-link">Walk In →</span>
+        </div>
+      </div>
+      <div class="dining-card" onclick="navigate('dining')">
+        <img src="https://images.unsplash.com/photo-1519167758481-83f29c8a4a12?w=900&q=80" alt="Trinity Sky Lounge" />
+        <div class="dining-card-overlay">
+          <span class="dining-card-tag">Rooftop · Sunset Dining</span>
+          <div class="dining-card-name">Trinity Sky Lounge</div>
+          <p class="dining-card-desc">Dine under the stars with panoramic views and an atmosphere unlike any other.</p>
+          <span class="dining-card-link">Book Now →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <span class="section-label" style="display:block;text-align:center">Make It Special</span>
+    <h2 class="section-title">Reserve Your <em>Table</em> Today</h2>
+    <p class="cta-body">Whether it's a romantic dinner, a family celebration, or a corporate gathering — we craft moments that last a lifetime.</p>
+    <div class="cta-btns">
+      <button class="btn-gold-fill" onclick="navigate('reservation')">Reserve Now</button>
+      <button class="btn-gold" onclick="navigate('contact')">Get In Touch</button>
+    </div>
+  </section>
+
+</div><!-- end home -->
+
+<!-- ═══════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════ -->
+<div id="page-about" class="page">
+
+  <div class="page-hero">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80" alt="Trinity Restaurant" />
+    <div class="page-hero-content">
+      <span class="section-label">Our Story</span>
+      <h1 class="section-title">About <em>Trinity</em></h1>
+    </div>
+  </div>
+
+  <div class="about-story">
+    <span class="section-label" style="display:block;text-align:center">The Beginning</span>
+    <h2 class="section-title" style="font-size:clamp(28px,4vw,44px);margin-bottom:28px">A Vision Rooted in <em>Passion</em></h2>
+    <div class="divider center"></div>
+    <p>Trinity Restaurant was born from a simple yet powerful idea — that food is the universal language of love, culture, and community. What began as a dream shared between three friends over a modest dinner has grown into one of Hesaraghatta's most cherished dining destinations.</p>
+    <p>We believe that a great meal is not just about the food on the plate. It's about the story behind it, the hands that crafted it, the ambience that surrounds it, and the people you share it with. Every dish at Trinity is a chapter in a greater narrative — one that celebrates the diverse culinary heritage of India and the world.</p>
+    <p>Situated in the tranquil greenery of Hesaraghatta, Bengaluru, Trinity Restaurant offers an escape from the ordinary. Our four unique dining spaces cater to every mood — from intimate celebrations to grand family gatherings — each designed to provide a deeply personal and unforgettable experience.</p>
+  </div>
+
+  <!-- FOUNDERS -->
+  <section class="founders-section">
+    <div style="text-align:center">
+      <span class="section-label">The Visionaries</span>
+      <h2 class="section-title">Meet Our <em>Founders</em></h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="founders-grid">
+      <div class="founder-card">
+        <div class="founder-avatar">A</div>
+        <div class="founder-name">Arun Kumar N A</div>
+        <div class="founder-role">Lead & Vision · Chief Architect</div>
+        <div class="divider center"></div>
+        <p class="founder-bio">The driving force behind Trinity's philosophy, Arun envisioned a restaurant that would transcend conventional dining. With a deep passion for hospitality and culinary arts, he leads the brand's creative and strategic direction, ensuring every guest leaves with a memory worth cherishing.</p>
+      </div>
+      <div class="founder-card">
+        <div class="founder-avatar">A</div>
+        <div class="founder-name">Akashh M S</div>
+        <div class="founder-role">Co-Founder · Operations Head</div>
+        <div class="divider center"></div>
+        <p class="founder-bio">Akashh brings operational brilliance and an eye for detail that keeps Trinity running at its finest. From kitchen choreography to guest experience management, his hands-on approach ensures that the restaurant's promise of excellence is delivered, every single day.</p>
+      </div>
+      <div class="founder-card">
+        <div class="founder-avatar">P</div>
+        <div class="founder-name">Prakash Desai</div>
+        <div class="founder-role">Co-Founder · Culinary Director</div>
+        <div class="divider center"></div>
+        <p class="founder-bio">A culinary connoisseur with roots in Karnataka's rich food culture, Prakash curates Trinity's menus with authenticity and innovation. He champions the use of locally sourced, seasonal ingredients and mentors a kitchen brigade that shares his obsession with flavor and craft.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION VISION -->
+  <section class="mission-vision">
+    <div class="mv-card">
+      <div class="mv-num">01</div>
+      <div class="mv-title">Our Mission</div>
+      <div class="divider"></div>
+      <p class="mv-body">To serve food that nourishes the soul — crafted with the finest ingredients, inspired by heritage, and presented with the care and creativity of a true culinary team. We exist to create moments of genuine joy for every guest who walks through our doors.</p>
+    </div>
+    <div class="mv-card">
+      <div class="mv-num">02</div>
+      <div class="mv-title">Our Vision</div>
+      <div class="divider"></div>
+      <p class="mv-body">To be Bengaluru's most beloved dining destination — recognized not just for exceptional food, but for the warmth, authenticity, and spirit of community we bring to every table. We aspire to set a new standard for what hospitality truly means in India.</p>
+    </div>
+  </section>
+
+</div><!-- end about -->
+
+<!-- ═══════════════════════════════
+     MENU PAGE
+═══════════════════════════════ -->
+<div id="page-menu" class="page">
+  <div class="page-hero">
+    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1600&q=80" alt="Menu" />
+    <div class="page-hero-content">
+      <span class="section-label">Culinary Excellence</span>
+      <h1 class="section-title">Our <em>Menu</em></h1>
+    </div>
+  </div>
+  <section class="menu-page">
+    <div>
+      <span class="section-label">Explore Categories</span>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,44px)">Crafted with <em>Passion</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="menu-categories" id="menuCategories"></div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════
+     DINING PAGE
+═══════════════════════════════ -->
+<div id="page-dining" class="page">
+  <div class="page-hero">
+    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=1600&q=80" alt="Dining" />
+    <div class="page-hero-content">
+      <span class="section-label">Four Unique Spaces</span>
+      <h1 class="section-title">Dining <em>Experiences</em></h1>
+    </div>
+  </div>
+  <section class="dining-page">
+    <div style="text-align:center">
+      <span class="section-label">Choose Your Setting</span>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,44px)">Every Hall, a Different <em>World</em></h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="dining-halls">
+      <!-- Hall 1 -->
+      <div class="hall-row">
+        <div class="hall-img-wrap">
+          <img src="https://images.unsplash.com/photo-1568659358523-e4b23f91e6cc?w=900&q=80" alt="The Skyrane Hall" />
+          <div class="hall-img-num">01</div>
+        </div>
+        <div>
+          <span class="hall-subtitle">Luxury · Fine Dining</span>
+          <div class="hall-name">The Skyrane Hall</div>
+          <div class="divider"></div>
+          <p class="hall-desc">An opulent sanctuary of luxury dining — The Skyrane Hall enchants guests with soaring ceilings adorned with hand-crafted crystal chandeliers, curated art installations, and plush seating upholstered in silk-blend fabrics.</p>
+          <div class="hall-features">
+            <span class="hall-feat">Capacity: 80 Guests</span>
+            <span class="hall-feat">Private Dining Available</span>
+            <span class="hall-feat">Live Classical Music</span>
+            <span class="hall-feat">Curated Wine Pairing</span>
+          </div>
+          <button class="btn-gold" onclick="navigate('reservation')">Reserve This Hall</button>
+        </div>
+      </div>
+      <!-- Hall 2 -->
+      <div class="hall-row reverse">
+        <div class="hall-img-wrap">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80" alt="Desire Courtyard" />
+          <div class="hall-img-num">02</div>
+        </div>
+        <div>
+          <span class="hall-subtitle">Family · Open Air</span>
+          <div class="hall-name">Desire Courtyard</div>
+          <div class="divider"></div>
+          <p class="hall-desc">The Desire Courtyard is an open-air haven, framed by lush tropical plants, cascading water features, and warm Edison string lights. Designed with families in mind, a relaxed atmosphere where conversations flow as naturally as the food.</p>
+          <div class="hall-features">
+            <span class="hall-feat">Capacity: 150 Guests</span>
+            <span class="hall-feat">Kids' Play Zone</span>
+            <span class="hall-feat">Semi-Open Air</span>
+            <span class="hall-feat">Event Hosting</span>
+          </div>
+          <button class="btn-gold" onclick="navigate('reservation')">Reserve This Space</button>
+        </div>
+      </div>
+      <!-- Hall 3 -->
+      <div class="hall-row">
+        <div class="hall-img-wrap">
+          <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=900&q=80" alt="Snack Arena" />
+          <div class="hall-img-num">03</div>
+        </div>
+        <div>
+          <span class="hall-subtitle">Casual · Quick Bites</span>
+          <div class="hall-name">Snack Arena</div>
+          <div class="divider"></div>
+          <p class="hall-desc">Fast, bold, and unapologetically fun — the Snack Arena is Trinity's tribute to the vibrant street food culture of India. With interactive open kitchen counters, neon-lit boards, and a buzzing ambiance.</p>
+          <div class="hall-features">
+            <span class="hall-feat">No Reservation Needed</span>
+            <span class="hall-feat">Open Kitchen</span>
+            <span class="hall-feat">Snack Combos</span>
+            <span class="hall-feat">Quick Service</span>
+          </div>
+          <button class="btn-gold" onclick="navigate('order')">Order Ahead</button>
+        </div>
+      </div>
+      <!-- Hall 4 -->
+      <div class="hall-row reverse">
+        <div class="hall-img-wrap">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f29c8a4a12?w=900&q=80" alt="Trinity Sky Lounge" />
+          <div class="hall-img-num">04</div>
+        </div>
+        <div>
+          <span class="hall-subtitle">Rooftop · Sunset Dining</span>
+          <div class="hall-name">Trinity Sky Lounge</div>
+          <div class="divider"></div>
+          <p class="hall-desc">The crown jewel of Trinity — the Sky Lounge sits atop the building, offering sweeping views of the Hesaraghatta skyline and the Deccan plateau at dusk. Dine under an open canopy of stars with handcrafted cocktails.</p>
+          <div class="hall-features">
+            <span class="hall-feat">Rooftop Open Air</span>
+            <span class="hall-feat">Sunset Views</span>
+            <span class="hall-feat">Capacity: 60 Guests</span>
+            <span class="hall-feat">Craft Cocktails</span>
+          </div>
+          <button class="btn-gold" onclick="navigate('reservation')">Reserve a Sky Table</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════
+     RESERVATION PAGE
+═══════════════════════════════ -->
+<div id="page-reservation" class="page">
+  <div class="page-hero">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80" alt="Reserve" />
+    <div class="page-hero-content">
+      <span class="section-label">Plan Your Visit</span>
+      <h1 class="section-title">Reserve a <em>Table</em></h1>
+    </div>
+  </div>
+  <section class="reservation-page">
+    <div class="reservation-info">
+      <span class="section-label">Book Your Experience</span>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,44px)">We'd Love to <em>Host</em> You</h2>
+      <div class="divider"></div>
+      <p class="reservation-body">Reserving a table at Trinity ensures a perfectly prepared experience tailored to you. Our team arranges your preferred seating, attends to any dietary requirements, and ensures your occasion is exactly as you imagine it.</p>
+      <div class="reservation-highlights">
+        <div class="res-highlight">
+          <span class="res-highlight-icon">🕐</span>
+          <div>
+            <div class="res-highlight-name">Operating Hours</div>
+            <div class="res-highlight-desc">Monday – Friday: 11:00 AM – 11:00 PM<br>Saturday – Sunday: 10:00 AM – 11:30 PM</div>
+          </div>
+        </div>
+        <div class="res-highlight">
+          <span class="res-highlight-icon">📍</span>
+          <div>
+            <div class="res-highlight-name">Location</div>
+            <div class="res-highlight-desc">Hesaraghatta, Bengaluru – 560090, Karnataka, India</div>
+          </div>
+        </div>
+        <div class="res-highlight">
+          <span class="res-highlight-icon">📞</span>
+          <div>
+            <div class="res-highlight-name">Reservation Helpline</div>
+            <div class="res-highlight-desc">+91 93456 78210 · +91 81234 99876</div>
+          </div>
+        </div>
+        <div class="res-highlight">
+          <span class="res-highlight-icon">✉️</span>
+          <div>
+            <div class="res-highlight-name">Email Booking</div>
+            <div class="res-highlight-desc">contact@trinityrestaurant.in</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reservation-form">
+      <div class="form-title">Book Your Table</div>
+      <form id="reservationForm" onsubmit="submitReservation(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="resName" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="resPhone" placeholder="+91 XXXXX XXXXX" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="resEmail" placeholder="you@example.com" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date *</label>
+            <input type="date" id="resDate" required />
+          </div>
+          <div class="form-group">
+            <label>Time *</label>
+            <input type="time" id="resTime" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Number of Guests *</label>
+            <select id="resGuests" required>
+              <option value="">Select</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>9 – 15</option><option>16 – 30</option><option>30+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Dining Hall</label>
+            <select id="resHall">
+              <option>Any Available</option>
+              <option>The Skyrane Hall</option>
+              <option>Desire Courtyard</option>
+              <option>Snack Arena</option>
+              <option>Trinity Sky Lounge</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Special Requests</label>
+          <textarea id="resSpecial" rows="3" placeholder="Birthday celebrations, dietary requirements, accessibility needs..."></textarea>
+        </div>
+        <button type="submit" class="btn-gold-fill" style="width:100%;justify-content:center">Confirm Reservation</button>
+        <div class="form-success" id="resSuccess">
+          ✅ Your reservation has been confirmed! We'll send a confirmation to your email shortly. We look forward to hosting you at Trinity Restaurant.
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1600&q=80" alt="Contact" />
+    <div class="page-hero-content">
+      <span class="section-label">Get In Touch</span>
+      <h1 class="section-title"><em>Contact</em> Us</h1>
+    </div>
+  </div>
+  <section class="contact-page">
+    <div>
+      <span class="section-label">We're Here for You</span>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,44px)">Let's <em>Connect</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info-cards">
+        <div class="contact-card">
+          <span class="contact-card-icon">📍</span>
+          <div>
+            <div class="contact-card-label">Our Address</div>
+            <div class="contact-card-val">Trinity Restaurant<br>Hesaraghatta, Bengaluru – 560090<br>Karnataka, India</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="contact-card-icon">📞</span>
+          <div>
+            <div class="contact-card-label">Phone Numbers</div>
+            <div class="contact-card-val">
+              <a href="tel:+919345678210">+91 93456 78210</a><br>
+              <a href="tel:+918123499876">+91 81234 99876</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="contact-card-icon">✉️</span>
+          <div>
+            <div class="contact-card-label">Email Addresses</div>
+            <div class="contact-card-val">
+              <a href="mailto:contact@trinityrestaurant.in">contact@trinityrestaurant.in</a><br>
+              <a href="mailto:support.trinitydine@gmail.com">support.trinitydine@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="contact-card-icon">🕐</span>
+          <div>
+            <div class="contact-card-label">Working Hours</div>
+            <div class="contact-card-val">
+              Mon – Fri: 11:00 AM – 11:00 PM<br>
+              Sat – Sun: 10:00 AM – 11:30 PM<br>
+              <span style="color:var(--gold);font-size:12px">Kitchen closes 30 mins before closing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-form-area">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0!2d77.4669!3d13.1308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1a5c5fcf06c5%3A0x87a2e1f6c4f55aa0!2sHesaraghatta%2C%20Karnataka%20560090!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="contact-form">
+          <div class="form-title" style="font-size:22px">Send Us a Message</div>
+          <form onsubmit="submitContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Name *</label>
+                <input type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select>
+                <option>General Enquiry</option>
+                <option>Reservation Query</option>
+                <option>Event & Catering</option>
+                <option>Feedback</option>
+                <option>Careers</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea rows="4" placeholder="Tell us how we can help..." required></textarea>
+            </div>
+            <button type="submit" class="btn-gold-fill" style="width:100%;justify-content:center">Send Message</button>
+            <div class="form-success" id="contactSuccess" style="margin-top:16px">
+              ✅ Thank you! Your message has been received. We'll get back to you within 24 hours.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════
+     ORDER PAGE
+═══════════════════════════════ -->
+<div id="page-order" class="page">
+  <div class="page-hero" style="height:40vh;min-height:300px">
+    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=1600&q=80" alt="Order" />
+    <div class="page-hero-content">
+      <span class="section-label">Fresh to Your Table</span>
+      <h1 class="section-title">Order <em>Online</em></h1>
+    </div>
+  </div>
+  <section class="order-page">
+    <div class="order-layout">
+      <div class="order-menu-area">
+        <div>
+          <span class="section-label">Our Menu</span>
+          <h2 class="section-title" style="font-size:clamp(26px,3vw,38px)">What would you like <em>today?</em></h2>
+          <div class="divider"></div>
+        </div>
+        <div class="order-categories" id="orderCategories"></div>
+        <div class="order-grid" id="orderGrid"></div>
+      </div>
+      <div class="cart-panel">
+        <div class="cart-header">
+          <span class="cart-title">🛒 Your Cart</span>
+          <button onclick="clearCart()" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:11px;letter-spacing:1px">Clear</button>
+        </div>
+        <div id="cartPanelContent">
+          <div class="cart-empty">
+            <span class="cart-empty-icon">🍽</span>
+            Your cart is empty.<br>Add items to get started.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">TRINITY</div>
+      <div class="footer-tagline">"Taste the Trinity of Flavors"</div>
+      <p class="footer-desc">A premium dining destination in the heart of Hesaraghatta, Bengaluru. We bring together three culinary traditions — taste, authenticity, and togetherness — into every meal we serve.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn" title="Instagram">📷</a>
+        <a href="#" class="social-btn" title="Facebook">👍</a>
+        <a href="#" class="social-btn" title="Twitter">🐦</a>
+        <a href="#" class="social-btn" title="YouTube">▶️</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="navigate('home')">Home</a></li>
+        <li><a href="#" onclick="navigate('about')">About Us</a></li>
+        <li><a href="#" onclick="navigate('menu')">Our Menu</a></li>
+        <li><a href="#" onclick="navigate('dining')">Dining Halls</a></li>
+        <li><a href="#" onclick="navigate('order')">Online Order</a></li>
+        <li><a href="#" onclick="navigate('reservation')">Reservations</a></li>
+        <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Dining Hours</div>
+      <div class="footer-hours">
+        <div class="hour-row"><span class="hour-day">Mon – Thu</span><span class="hour-time">11am – 11pm</span></div>
+        <div class="hour-row"><span class="hour-day">Friday</span><span class="hour-time">11am – 11pm</span></div>
+        <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">10am – 11:30pm</span></div>
+        <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-time">10am – 11:30pm</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+919345678210">+91 93456 78210</a></li>
+        <li><a href="tel:+918123499876">+91 81234 99876</a></li>
+        <li><a href="mailto:contact@trinityrestaurant.in">contact@trinityrestaurant.in</a></li>
+      </ul>
+      <div style="margin-top:24px;font-size:12px;color:var(--text-muted);line-height:1.7">
+        Hesaraghatta, Bengaluru<br>Karnataka – 560090, India
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 Trinity Restaurant. All rights reserved. | Founded by Arun Kumar N A, Akashh M S & Prakash Desai</span>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
